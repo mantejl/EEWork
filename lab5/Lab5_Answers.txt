@@ -1,0 +1,26 @@
+EE 109 - Fall 2022
+Lab 5 - Combination Lock
+
+Edit the document below to fill in your answers to the review problems at the
+end of the assignment web page.
+
+1. (2 points) To ensure a date appears in the format: MM/DD, what snprintf()
+formatting string could be used to ensure dates like 6/9 are generated in a
+character buffer as 06/09.
+
+	char buf[17];
+	int m = 6; d = 9;
+	snprintf(buf, 17, /* you write the format string */, m, d);
+
+- snprintf(buf, 17,"%02d/%02d",m,d);
+
+
+2. (1 point) Bobby Bruin wants to add a secret code to the lock where the user
+can go directly from state S0 to the unlocked state S5 by pressing both buttons
+at the same time.  Tammy Trojan, thinking about the execution speed of the
+processor, says this can't be done, at least not reliably.  What is her reason
+for thinking so?
+
+The speed of the processor is so high, and as a result, it is almost impossible for a human to click both buttons at literally the exact same time. Hence, that is the reasoning behind Tammy's thinking. 
+
+

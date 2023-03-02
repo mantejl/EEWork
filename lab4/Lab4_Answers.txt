@@ -1,0 +1,44 @@
+			      EE 109 - Fall 2022
+			 Lab 4 - Using the LCD Display
+
+Edit the document below to fill in your answers to the review problems at the
+end of the assignment web page.
+
+1. (2 points) We want you to feel comfortable reading documentation to
+understand the operation of a device.  To that end, open the ATmega328P
+manufacturer's datasheet linked on our website from the Tools and Links Page.
+The question below is related to the material in Section 14.2 on page 85.
+
+Billy Bruin has read Section 14.2 on page 85 of the ATmega328P datasheet and
+says that he now knows an easy way to "toggle" the E bit (flipping it to its
+opposite value) to generate the E pulse in the lcd_writenibble() function by
+using this code.
+
+    PINB |= (1 << PB1)     // Toggle E bit from 0 to 1
+    PORTB |= (1 << PB1);   // Delay to make the E pulse longer
+    PINB |= (1 << PB1)     // Toggle E bit from 1 to 0
+
+Tammy Trojan has read the same section of the datasheet, and studied Figure
+14-2 on page 85, and she says that while Billy's method may work for the
+lcd_writenibble() function in Lab 4, it can cause problems when used in other
+situations.  She recommends using this code.
+
+    PINB = (1 << PB1)      // Toggle E bit from 0 to 1
+    PORTB |= (1 << PB1);   // Delay to make the E pulse longer
+    PINB = (1 << PB1)      // Toggle E bit from 1 to 0
+
+Study Section 14.2 and then explain what the problem is with Billy's method,
+and why Tammy's is the correct way to do it.
+
+Tammy's way we would only change one specific bit, but with Billy's method we flip bits that we are not supposed to do. Billy's method would change a lot of the bits, 
+
+
+
+2. (1 point) Suppose we need to perform 3 concurrent tasks intermittently: Task
+A every 20 ms, Task B every 15 ms, and Task C every 40 ms. What delay should be
+used on each iteration of the main loop?
+ 
+ 120ms
+
+
+

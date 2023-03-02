@@ -1,0 +1,17 @@
+			      EE 109 - Fall 2022
+		    Lab 7 - Rotary Encoders and Interrupts
+
+Edit the document below to fill in your answers to the review problems at the
+end of the assignment web page.
+
+
+1. (1 point) Briefly explain why it is undesirable to read the two encoder
+input signals with two separate PINC statements.
+
+If we had two PINC statements, it would register situations for which a and b are being checked for incorrect values. 
+
+2. (1 point) Briefly explain why updating the LCD display in your ISR could
+lead to undesirable behavior for this lab.
+
+
+This would cause a lag to occur as a change in the rotary will not cause the interrupt function to trigger again. The LCD display would miss numbers when the count changes. 
